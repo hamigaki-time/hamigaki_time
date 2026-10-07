@@ -1,0 +1,1107 @@
+/* ========================================
+   仮想歯科 はみがきタイム
+   メインスタイル
+======================================== */
+
+/* ---------- 基本設定 ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Noto Sans JP",
+        "Yu Gothic",
+        "Hiragino Kaku Gothic ProN",
+        sans-serif;
+
+    color: #34505f;
+    background: #f8fdff;
+    line-height: 1.8;
+}
+
+
+/* ---------- ヘッダー ---------- */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-bottom: 1px solid #d9f1f8;
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+
+/* ロゴ */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    height: 100%;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+
+    display: block;
+}
+
+
+/* ナビ */
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #52717e;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #27a9d0;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 100vh;
+
+    padding:
+        150px
+        8%
+        80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #effbff 100%
+        );
+}
+
+
+/* 背景の円 */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 550px;
+    height: 550px;
+
+    right: -180px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background: #dff7ff;
+
+    opacity: 0.8;
+}
+
+
+/* HERO文字 */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 700px;
+}
+
+.hero-subtitle {
+    color: #35a8ca;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    color: #315866;
+
+    font-size: clamp(48px, 7vw, 90px);
+
+    line-height: 1.15;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #28a8ce;
+}
+
+.hero-description {
+    color: #66818c;
+
+    font-size: 18px;
+
+    margin-bottom: 40px;
+}
+
+
+/* HEROボタン */
+
+.hero-button {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    background: #35afd2;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px rgba(53, 175, 210, 0.25);
+
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(53, 175, 210, 0.35);
+}
+
+
+/* HEROの歯 */
+
+.hero-tooth {
+    position: relative;
+
+    z-index: 2;
+
+    width: 330px;
+    height: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 150px;
+
+    box-shadow:
+        0 25px 60px rgba(50, 150, 180, 0.15);
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+
+/* 浮遊アニメーション */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ---------- 共通セクション ---------- */
+
+.section {
+    padding: 120px 8%;
+}
+
+
+/* セクションタイトル */
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.section-title p {
+    color: #35afd2;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 10px;
+}
+
+.section-title h2 {
+    color: #345967;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.section-title span {
+    color: #78909a;
+
+    font-size: 15px;
+}
+
+
+/* ---------- ABOUT ---------- */
+
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        350px;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.about-text p {
+    color: #607b86;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+}
+
+
+.about-card {
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: #effaff;
+
+    border: 1px solid #d8f3fa;
+
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(60, 170, 200, 0.12);
+}
+
+.card-icon {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    color: #2e91ad;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    color: #718993;
+}
+
+
+/* ---------- CAST ---------- */
+
+.cast {
+    background: #f4fbfd;
+}
+
+
+/* 横スクロール */
+
+.cast-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 25px;
+
+    overflow-x: auto;
+
+    padding: 10px 10px 30px;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+    scrollbar-color: #8ed8e8 transparent;
+}
+
+
+/* スクロールバー */
+
+.cast-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cast-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cast-grid::-webkit-scrollbar-thumb {
+    background: #8ed8e8;
+    border-radius: 10px;
+}
+
+
+/* キャストカード */
+
+.cast-card {
+    flex: 0 0 260px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid #e0f1f5;
+
+    scroll-snap-align: start;
+
+    transition: 0.3s;
+}
+
+
+.cast-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(60, 160, 190, 0.12);
+}
+
+
+/* キャスト画像 */
+
+.cast-image {
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff7ff,
+            #effcff
+        );
+
+    color: #55a9be;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+.cast-card h3 {
+    color: #385d69;
+
+    font-size: 18px;
+
+    padding:
+        15px
+        18px
+        0;
+}
+
+
+.cast-card p {
+    color: #8a9ba1;
+
+    font-size: 13px;
+
+    padding:
+        0
+        18px
+        18px;
+}
+
+
+/* ---------- EVENT ---------- */
+
+.event {
+    background: white;
+}
+
+
+.event-box {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.event-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: #f4fbfd;
+
+    border: 1px solid #ddf2f6;
+
+    transition: 0.3s;
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+}
+
+
+.event-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    font-size: 27px;
+
+    flex-shrink: 0;
+}
+
+
+.event-item small {
+    color: #48a9c2;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+
+.event-item h3 {
+    color: #3b626e;
+
+    font-size: 18px;
+}
+
+
+.event-item p {
+    color: #78919a;
+
+    font-size: 14px;
+}
+
+
+/* ---------- JOIN ---------- */
+
+.join {
+    background:
+        linear-gradient(
+            135deg,
+            #e9faff,
+            #f8fdff
+        );
+
+    text-align: center;
+}
+
+
+.join-buttons {
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.join-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    color: #426773;
+
+    text-decoration: none;
+
+    text-align: left;
+
+    border: 1px solid #d9eff4;
+
+    transition: 0.3s;
+}
+
+
+.join-button:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(60, 160, 190, 0.15);
+}
+
+
+.join-button > span {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #e4f8fc;
+
+    color: #269fbe;
+
+    font-weight: bold;
+}
+
+
+.join-button small {
+    display: block;
+
+    color: #45a8c1;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.join-button strong {
+    font-size: 17px;
+}
+
+
+/* ---------- NOTICE ---------- */
+
+.notice {
+    background: white;
+}
+
+
+.notice-box {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 35px 45px;
+
+    border-radius: 20px;
+
+    background: #f7fbfc;
+
+    border: 1px solid #e0eff2;
+}
+
+
+.notice-box li {
+    color: #6d838b;
+
+    margin-bottom: 12px;
+}
+
+.notice-box li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #315c69;
+
+    color: white;
+}
+
+
+.footer-logo {
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.footer p {
+    font-size: 12px;
+
+    opacity: 0.7;
+}
+
+
+/* ========================================
+   スマートフォン対応
+======================================== */
+
+@media (max-width: 900px) {
+
+    .nav {
+        gap: 15px;
+    }
+
+    .hero {
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .hero-tooth {
+        display: none;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .cast-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* スマートフォン */
+
+@media (max-width: 600px) {
+
+    .header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 15px;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 10px;
+    }
+
+
+    .hero {
+        padding:
+            130px
+            20px
+            70px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+
+    .section {
+        padding:
+            80px
+            20px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+
+    
+
+    .event-box {
+        grid-template-columns: 1fr;
+    }
+
+
+    .join-buttons {
+        grid-template-columns: 1fr;
+    }
+
+
+    .notice-box {
+        padding: 25px;
+    }
+
+}
+/* ========================================
+   JavaScript アニメーション
+======================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ---------- スクロール時のヘッダー ---------- */
+
+.header {
+    transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+        0 5px 20px rgba(40, 150, 180, 0.08);
+}
+/* ========================================
+   CAST 横スクロール
+======================================== */
+
+.cast {
+    background: #f4fbfd;
+}
+
+
+/* スライダー全体 */
+
+.cast-slider {
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* キャスト一覧 */
+
+.cast-grid {
+    flex: 1;
+    min-width: 0;
+
+    display: flex;
+    gap: 25px;
+
+    overflow-x: auto;
+
+    padding: 10px 5px 30px;
+
+    scroll-behavior: smooth;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: thin;
+    scrollbar-color: #8ed8e8 transparent;
+}
+
+
+/* スクロールバー */
+
+.cast-grid::-webkit-scrollbar {
+    height: 7px;
+}
+
+.cast-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cast-grid::-webkit-scrollbar-thumb {
+    background: #8ed8e8;
+    border-radius: 10px;
+}
+
+
+/* キャストカード */
+
+.cast-card {
+    flex: 0 0 260px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid #e0f1f5;
+
+    scroll-snap-align: start;
+
+    transition: 0.3s;
+}
+
+.cast-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 30px rgba(60, 160, 190, 0.12);
+}
+
+
+/* キャスト画像 */
+
+.cast-image {
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dff7ff,
+            #effcff
+        );
+
+    color: #55a9be;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+
+/* キャスト名 */
+
+.cast-card h3 {
+    color: #385d69;
+
+    font-size: 18px;
+
+    padding:
+        15px
+        18px
+        0;
+}
+
+
+/* 紹介文 */
+
+.cast-card p {
+    color: #8a9ba1;
+
+    font-size: 13px;
+
+    padding:
+        0
+        18px
+        18px;
+}
+
+
+/* ========================================
+   矢印ボタン
+======================================== */
+
+.cast-arrow {
+    width: 56px;
+    height: 56px;
+
+    flex: 0 0 56px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+
+    color: #35afd2;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 20px rgba(50, 150, 180, 0.12);
+
+    transition:
+        background 0.3s,
+        color 0.3s,
+        transform 0.3s;
+}
+
+
+.cast-arrow:hover {
+    background: #35afd2;
+
+    color: white;
+
+    transform: scale(1.08);
+}
+
+
+.cast-arrow:disabled {
+    opacity: 0.3;
+
+    cursor: default;
+
+    transform: none;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 600px) {
+
+    .cast-slider {
+        gap: 8px;
+    }
+
+    .cast-arrow {
+        width: 44px;
+        height: 44px;
+
+        flex: 0 0 44px;
+
+        font-size: 32px;
+    }
+
+    .cast-card {
+        flex: 0 0 240px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .logo img {
+        width: 150px;
+    }
+
+}
