@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CAST | 仮想歯科 はみがきタイム</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header class="header">
+
+        <a href="index.html" class="logo">
+            <img src="ロゴ横長.png" alt="仮想歯科 はみがきタイム">
+        </a>
+
+        <nav class="nav">
+            <a href="index.html#about">ABOUT</a>
+            <a href="index.html#cast">CAST</a>
+            <a href="index.html#event">EVENT</a>
+            <a href="index.html#join">JOIN</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CAST詳細 -->
+    <main class="cast-detail">
+
+        <div class="cast-detail-inner">
+
+            <div class="cast-detail-header">
+                <span>VIRTUAL DENTAL CLINIC</span>
+                <span>CAST PROFILE</span>
+            </div>
+
+
+            <!-- キャスト名 -->
+            <div class="cast-detail-nav">
+
+                <button
+                    id="detail-prev"
+                    class="detail-arrow"
+                    type="button">
+                    ←
+                </button>
+
+                <div class="detail-cast-name">
+
+                    <span id="detail-number">
+                        CAST 01
+                    </span>
+
+                    <h1 id="detail-name">
+                        むらかみかん
+                    </h1>
+
+                </div>
+
+                <button
+                    id="detail-next"
+                    class="detail-arrow"
+                    type="button">
+                    →
+                </button>
+
+            </div>
+
+
+            <!-- キャスト紹介 -->
+            <div class="cast-detail-content">
+
+
+                <!-- 左：立ち絵 -->
+                <div class="detail-character">
+
+                    <div class="character-placeholder">
+
+                        <span>
+                            立ち絵
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- 右：プロフィール -->
+                <div class="detail-profile">
+
+    <span class="profile-label">
+        PROFILE
+    </span>
+
+    <div class="profile-section">
+
+        <span class="profile-section-title">
+            INTRODUCTION
+        </span>
+
+        <p id="detail-description">
+            キャストの紹介文がここに入ります。
+        </p>
+
+    </div>
+
+    <div class="profile-section">
+
+        <span class="profile-section-title">
+            BIRTHDAY
+        </span>
+
+        <p id="detail-birthday">
+            1月1日
+        </p>
+
+    </div>
+
+    <div class="profile-section">
+
+        <span class="profile-section-title">
+            EVENT
+        </span>
+
+        <ul id="detail-events" class="event-list">
+        </ul>
+
+    </div>
+
+    <div class="profile-section">
+
+        <span class="profile-section-title">
+            COMMENT
+        </span>
+
+        <p id="detail-info-comment">
+            イベントでお会いできるのを楽しみにしています！
+        </p>
+
+    </div>
+
+</div>
+
+
+            <!-- CAST一覧へ -->
+            <a
+                href="index.html#cast"
+                class="detail-back">
+
+                ← CAST一覧へ戻る
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="cast.js"></script>
+
+</body>
+
+</html>
