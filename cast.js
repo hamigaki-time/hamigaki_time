@@ -2,6 +2,7 @@ const casts = [
 
     {
         name: "むらかみかん",
+        image: "images/cast.1.png",
 
         description:
             "キャストの紹介文がここに入ります。イベントでは皆さまに癒しの時間をお届けします。",
@@ -21,6 +22,7 @@ const casts = [
 
     {
         name: "れいなのさ",
+        image: "images/cast.21.png",
 
         description:
             "れいなのさの紹介文がここに入ります。",
@@ -39,6 +41,7 @@ const casts = [
 
     {
         name: "ゆずも",
+        image: "images/cast.3.png",
 
         description:
             "ゆずもの紹介文がここに入ります。",
@@ -59,6 +62,7 @@ const casts = [
 
     {
         name: "こいしいろは",
+        image: "images/cast.4.png",
 
         description:
             "こいしいろはの紹介文がここに入ります。",
@@ -77,6 +81,7 @@ const casts = [
 
     {
         name: "やしろのあ",
+        image: "images/cast.5.png",
 
         description:
             "やしろのあの紹介文がここに入ります。",
@@ -96,6 +101,7 @@ const casts = [
 
     {
         name: "ちふゆ",
+        image: "images/cast.6.png",
 
         description:
             "キャスト06の紹介文がここに入ります。",
@@ -114,6 +120,7 @@ const casts = [
 
     {
         name: "ひーくん",
+        image: "images/cast.7.png",
 
         description:
             "キャスト07の紹介文がここに入ります。",
@@ -132,6 +139,7 @@ const casts = [
 
     {
         name: "レイブン",
+        image: "images/cast.8.png",
 
         description:
             "キャスト08の紹介文がここに入ります。",
@@ -150,6 +158,7 @@ const casts = [
 
     {
         name: "くろな",
+        image: "images/cast.9.png",
 
         description:
             "キャスト09の紹介文がここに入ります。",
@@ -168,6 +177,7 @@ const casts = [
 
     {
         name: "ちせ",
+        image: "images/cast.10.png",
 
         description:
             "キャスト10の紹介文がここに入ります。",
@@ -186,6 +196,7 @@ const casts = [
 
     {
         name: "ゆみもきゅ",
+        image: "images/cast.11.png",
 
         description:
             "キャスト11の紹介文がここに入ります。",
@@ -204,6 +215,7 @@ const casts = [
 
 {
     name: "うしお",
+    image: "images/cast.12.png",
 
     description:
         "キャスト12の紹介文がここに入ります。",
@@ -251,6 +263,15 @@ function showCast() {
 
     document.querySelector("#detail-name").textContent =
         cast.name;
+
+const characterImage =
+    document.querySelector("#detail-character-image");
+
+if (characterImage && cast.image) {
+    characterImage.src = cast.image;
+    characterImage.alt = cast.name + "の立ち絵";
+}
+
 
    
     document.querySelector("#detail-description").textContent =
